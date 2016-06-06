@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "umd",
+    "sourceMap": true,
+    "jsx": "react"
+  },
+  "include": [
+    "lib/",
+    "typings/index.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

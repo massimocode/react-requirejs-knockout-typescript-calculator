@@ -6,7 +6,8 @@ interface CalculatorState {
 }
 
 export default class CalculatorComponent extends React.Component<void, CalculatorState> {
-  calculator: Calculator;
+  private calculator: Calculator;
+  private resultSubscription: KnockoutSubscription;
 
   constructor() {
     super();
@@ -14,7 +15,7 @@ export default class CalculatorComponent extends React.Component<void, Calculato
 
     this.state = { result: this.calculator.input() };
 
-    this.calculator.input.subscribe(newValue => {
+    this.resultSubscription = this.calculator.input.subscribe(newValue => {
       this.setState({ result: this.calculator.input() });
     });
   }
@@ -49,5 +50,9 @@ export default class CalculatorComponent extends React.Component<void, Calculato
         <div className="col-xs-3"><button type="button" className="btn btn-block" onClick={() => this.calculator.equal() }>=</button></div>
       </div>
     </div>
+  }
+
+  private componentWillUnmount() {
+    this.resultSubscription.dispose();
   }
 }

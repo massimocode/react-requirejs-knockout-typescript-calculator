@@ -2,12 +2,16 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import CalculatorComponent from './components/calculator';
 
+interface Calculator {
+  id: number;
+}
+
 interface AppState {
-  calculators: { id: number; }[];
+  calculators: Calculator[];
 }
 
 class App extends React.Component<void, AppState> {
-  lastId: number;
+  private lastId: number;
 
   constructor() {
     super();
@@ -20,7 +24,7 @@ class App extends React.Component<void, AppState> {
     this.setState({ calculators: this.state.calculators });
   }
 
-  removeCalculator(calculator: { id: number; }) {
+  removeCalculator(calculator: Calculator) {
     this.state.calculators.splice(this.state.calculators.indexOf(calculator), 1);
     this.setState({ calculators: this.state.calculators });
   }

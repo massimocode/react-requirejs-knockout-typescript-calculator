@@ -1,6 +1,5 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import CalculatorComponent from './components/calculator';
+import CalculatorComponent from './calculator';
 
 interface Calculator {
   id: number;
@@ -10,7 +9,7 @@ interface AppState {
   calculators: Calculator[];
 }
 
-class App extends React.Component<void, AppState> {
+export default class App extends React.Component<void, AppState> {
   private lastId: number;
 
   constructor() {
@@ -19,12 +18,12 @@ class App extends React.Component<void, AppState> {
     this.state = { calculators: [{ id: this.lastId++ }] };
   }
 
-  addCalculator() {
+  addCalculator(): void {
     this.state.calculators.push({ id: this.lastId++ });
     this.setState({ calculators: this.state.calculators });
   }
 
-  removeCalculator(calculator: Calculator) {
+  removeCalculator(calculator: Calculator): void {
     this.state.calculators.splice(this.state.calculators.indexOf(calculator), 1);
     this.setState({ calculators: this.state.calculators });
   }
@@ -49,8 +48,3 @@ class App extends React.Component<void, AppState> {
     </div>;
   }
 }
-
-ReactDOM.render(
-  <App></App>,
-  document.getElementById('main')
-);

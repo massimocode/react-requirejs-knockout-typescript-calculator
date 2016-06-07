@@ -15,3 +15,9 @@ This way the React component is kept as simple as possible and the business logi
 One thing I really like about this approach is that all of the "business logic" lives in a DOM agnostic module
 which can be easily tested and the bindings to that module are strongly typed so the TypeScript compiler does
 all those checks at compile time so there is basically zero requirement to unit test it.
+
+One thing about React I don't like (compared to Knockout) is that the Add/Remove functionality for the
+calculators requires me to use an ID for each calculator. What if I don't want to use an ID? Knockout makes this
+extremely simple but React is very very verbose. And I can't just use the index of the array because removing
+a calculator from the beginning will cause the end one to be removed. I will be experimenting with all this stuff
+more!

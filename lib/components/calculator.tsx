@@ -20,36 +20,34 @@ export default class CalculatorComponent extends React.Component<void, Calculato
   }
 
   render() {
-    return <div className="main-body">
-      <form>
-        <div className="input-div">
-          <span type="text">{this.state.result}</span>
-        </div>
-        <ul className="first-row">
-          <li><button type="button" onClick={() => this.calculator.addNumber(7) }>7</button></li>
-          <li><button type="button" onClick={() => this.calculator.addNumber(8) }>8</button></li>
-          <li><button type="button" onClick={() => this.calculator.addNumber(9) }>9</button></li>
-          <li><button type="button" onClick={() => this.calculator.clear() }>C</button></li>
-        </ul >
-        <ul className="second-row">
-          <li><button type="button" onClick={() => this.calculator.addNumber(4) }>4</button></li>
-          <li><button type="button" onClick={() => this.calculator.addNumber(5) }>5</button></li>
-          <li><button type="button" onClick={() => this.calculator.addNumber(6) }>6</button></li>
-          <li><button type="button" onClick={() => this.calculator.addPlus() }>+</button></li>
-        </ul >
-        <ul className="third-row">
-          <li><button type="button" onClick={() => this.calculator.addNumber(1) }>1</button></li>
-          <li><button type="button" onClick={() => this.calculator.addNumber(2) }>2</button></li>
-          <li><button type="button" onClick={() => this.calculator.addNumber(3) }>3</button></li>
-          <li><button type="button" onClick={() => this.calculator.addMinus() }>-</button></li>
-        </ul >
-        <ul className="fourth-row">
-          <li><button type="button" onClick={() => this.calculator.addNumber(0) }>0</button></li>
-          <li><button type="button" onClick={() => this.calculator.addMultiplication() }>&times; </button></li>
-          <li><button type="button" onClick={() => this.calculator.addDivision() }>&divide; </button></li>
-          <li><button type="button" onClick={() => this.calculator.equal() }>=</button></li>
-        </ul>
-      </form>
+    return <div className="calculator">
+      <div className="row">
+        <input type="text" className="form-control" value={this.state.result} readOnly />
+      </div>
+      <div className="row">
+        <div className="col-xs-3"><button type="button" className="btn btn-block" onClick={() => this.calculator.addNumber(7) }>7</button></div>
+        <div className="col-xs-3"><button type="button" className="btn btn-block" onClick={() => this.calculator.addNumber(8) }>8</button></div>
+        <div className="col-xs-3"><button type="button" className="btn btn-block" onClick={() => this.calculator.addNumber(9) }>9</button></div>
+        <div className="col-xs-3"><button type="button" className="btn btn-block" onClick={() => this.calculator.clear() }>C</button></div>
+      </div>
+      <div className="row">
+        <div className="col-xs-3"><button type="button" className="btn btn-block" onClick={() => this.calculator.addNumber(4) }>4</button></div>
+        <div className="col-xs-3"><button type="button" className="btn btn-block" onClick={() => this.calculator.addNumber(5) }>5</button></div>
+        <div className="col-xs-3"><button type="button" className="btn btn-block" onClick={() => this.calculator.addNumber(6) }>6</button></div>
+        <div className="col-xs-3"><button type="button" className="btn btn-block" onClick={() => this.calculator.addPlus() }>+</button></div>
+      </div>
+      <div className="row">
+        <div className="col-xs-3"><button type="button" className="btn btn-block" onClick={() => this.calculator.addNumber(1) }>1</button></div>
+        <div className="col-xs-3"><button type="button" className="btn btn-block" onClick={() => this.calculator.addNumber(2) }>2</button></div>
+        <div className="col-xs-3"><button type="button" className="btn btn-block" onClick={() => this.calculator.addNumber(3) }>3</button></div>
+        <div className="col-xs-3"><button type="button" className="btn btn-block" onClick={() => this.calculator.addMinus() }>-</button></div>
+      </div>
+      <div className="row">
+        <div className="col-xs-3"><button type="button" className="btn btn-block" onClick={() => this.calculator.addNumber(0) }>0</button></div>
+        <div className="col-xs-3"><button type="button" className="btn btn-block" onClick={() => this.calculator.addMultiplication() }>&times; </button></div>
+        <div className="col-xs-3"><button type="button" className="btn btn-block" onClick={() => this.calculator.addDivision() }>&divide; </button></div>
+        <div className="col-xs-3"><button type="button" className="btn btn-block" onClick={() => this.calculator.equal() }>=</button></div>
+      </div>
     </div>
   }
 }

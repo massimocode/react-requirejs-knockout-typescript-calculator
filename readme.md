@@ -3,8 +3,8 @@ A small client side calculator
 
 - Calculator code taken from [here](https://github.com/SMH110/My-Calculator)
 - React JS for the "view engine"
-- Require JS for the module management / DI (should probably use SystemJS)
-- Knockout JS for the eventing / observable (should probably use RxJS)
+- Require JS for the module management / DI (could also use SystemJS)
+- Knockout JS for the eventing / observable (could also use RxJS)
 - TypeScript for TSX compilation and type checking
 
 I did make this without Knockout at first but what I found was that if I didn't move all the "business

@@ -32,7 +32,7 @@ export default class App extends React.Component<void, AppState> {
     return <div className="container">
       <div className="row">
         {this.state.calculators.map(calculator =>
-          <div key={calculator.id} className="col-xs-4">
+          <div key={calculator.id} className="col-lg-4 col-md-6 col-xs-12">
             <CalculatorComponent></CalculatorComponent>
             {this.state.calculators.length > 1 ?
               <button type="button" className="btn btn-block btn-danger remove-calculator" onClick={() => this.removeCalculator(calculator) }>Remove</button>
